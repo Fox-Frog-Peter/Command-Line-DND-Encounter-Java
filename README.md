@@ -1,57 +1,60 @@
-D&D Encounter Generator (Command Line)
+A command-line Java application that generates randomized encounters for Dungeons & Dragons (or other tabletop RPGs).
+The generator creates monsters, NPCs, items, buildings, species, and even wild magic effects across multiple environments such as forests, tundras, deserts, towns, and ports.
 
-This is a command-line Java application that generates randomized encounters for Dungeons & Dragons (or other tabletop RPGs). It provides monsters, NPCs, items, buildings, species, and even wild magic effects across a variety of environments such as forests, tundras, deserts, towns, and more.
-
-Features
+✦ Features
 
 Random Encounters by Environment
-Forest, tundra, desert, mountain, underground, grasslands, hamlets, towns, cities, and ports each have unique enemy tables.
+Each environment (forest, tundra, desert, mountain, underground, grasslands, hamlets, towns, cities, ports) has its own encounter table.
 
-Example: A forest encounter might spawn a Bandit, Treant, or Forest Guardian depending on the challenge rating.
+Example:
+
+Forest → Bandit, Treant, Forest Guardian
+
+Port → Smuggler, Pirate Captain, Kraken Spawn
 
 Challenge Rating (CR) Scaling
-Encounters are generated with CRs ranging from 0.25 to 10.0, chosen randomly to match the adventure difficulty.
+Encounters are generated with CR values from 0.25 to 10.0, chosen randomly for varied difficulty.
 
 Wild Magic Surges
-Over 100 possible wild magic outcomes, from minor inconveniences (your armor falls off) to game-altering events (you polymorph into a Paraceratherium).
+Over 100 possible wild magic effects, from silly (your armor falls off) to catastrophic (you polymorph into a Paraceratherium).
 
-Items, Buildings, and People
-Randomized utility tables allow quick generation of loot, NPCs, and urban structures.
+Loot, Buildings, and NPCs
+Utility tables generate random items, structures, and townsfolk on demand.
 
 Species Generator
-Randomized races for NPCs, from common (Human, Dwarf, Elf) to rare (Ratatosk, Dragonborn, Felidarian).
+Randomizes fantasy races:
 
-How It Works
+Common → Human, Dwarf, Elf
+
+Uncommon → Dragonborn, Felidarian, Ratatosk
+
+✦ How It Works
 
 Run the program in your terminal:
 
 java org.peterjordahl.App
 
 
-You’ll be prompted for:
+Enter your party size and total party level when prompted.
 
-Party Size (number of adventurers)
+The generator will:
 
-Total Party Level (sum of all levels)
+Select a random environment
 
-Based on these inputs, the generator will:
+Roll a random CR
 
-Select a random environment table.
+Output a suitable encounter
 
-Roll a random Challenge Rating.
-
-Output a suitable enemy encounter.
-
-After the encounter, you’ll be asked:
+After each result, you’ll see:
 
 Do you need another encounter? (YES) or (NO)
 
 
-Typing YES rolls a new encounter.
+Type YES → rolls a new encounter
 
-Typing NO exits with a friendly message.
+Type NO → exits with a friendly farewell
 
-Example Run
+✦ Example Run
 How many adventurers are in your party? 4
 What is the total of all of their levels? 12
 
@@ -62,26 +65,29 @@ Exciting!
 
 >> Encounter Generated: A CR 0.5 Smuggler lurking in the port!
 
-Project Structure
+✦ Project Structure
 
-Maps of Encounters: Each biome or settlement type maps CRs to monsters.
+Encounter Tables
+Environment → Challenge Rating → Monster/NPC
 
-Utility Generators: Randomized wild magic, items, buildings, NPCs, and species.
+Utility Generators
+Wild magic, items, buildings, NPCs, species
 
-Scanner Input: Accepts user choices for repeat encounters.
+User Input
+Powered by Scanner, loops until player exits
 
-Requirements
+✦ Requirements
 
 Java 17+ (or compatible JDK)
 
-Command-line execution environment
+Command-line environment
 
-Future Enhancements
+✦ Future Enhancements
 
-Add difficulty scaling based on average party level.
+Difficulty scaling based on average party level
 
-Support saving encounters to a session log.
+Optional environment selection instead of pure randomness
 
-Expand monster, magic, and item tables.
+Expanded monster, item, and magic surge tables
 
-Optional “environment selection” instead of purely random rolls.
+Save encounters to a session log file
